@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body>
-    <h1 class="relative z-10 text-white">Test</h1>
+    <div class="relative flex justify-evenly h-[100vh] z-10 text-white">
+        <div id="themes" class="flex justify-start mt-4 ml-8">
+            <ul id="theme-list" class="flex flex-col list-none">
+                <li class="theme" data-theme="default">Default</li>
+                <li class="theme" data-theme="dark">Dark</li>
+                <li class="theme" data-theme="light">Light</li>
+                <li class="theme" data-theme="blue">Blue</li>
+            </ul>
+        </div>
+        <textarea id="message" class="relative mt-[15%] mx-auto w-[80%] md:w-[60%] max-h-96" placeholder="Enter your message..."></textarea>
+    </div>
     <canvas class="webgl"></canvas>
     <script type="module" src="./script.js"></script>
 </body>

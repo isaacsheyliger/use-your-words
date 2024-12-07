@@ -34,6 +34,7 @@ fontLoader.load(
     {
         // Material
         const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+        // const material2 = new THREE.MeshStandardMaterial({ color: 0xff0000 });
 
         // Text
         const textGeometry = new TextGeometry(
