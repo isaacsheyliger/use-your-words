@@ -9,6 +9,7 @@ import GUI from 'lil-gui';
  */
 // Debug
 const gui = new GUI();
+gui.hide();
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
@@ -54,6 +55,7 @@ fontLoader.load(
         textGeometry.center();
 
         const text = new THREE.Mesh(textGeometry, material);
+        text.name = 'text';
         scene.add(text);
 
         // Donuts
@@ -74,6 +76,61 @@ fontLoader.load(
         }
     }
 );
+
+// add logic to change the text to what the user types into the textarea
+const textInput = document.querySelector('textarea');
+textInput.style.display = 'none';
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 't' && textInput.style.display === 'none') {
+        // show the textarea
+        textInput.style.display = 'block';
+        console.log(textInput.style.display);   
+    }
+});
+
+textInput.addEventListener('keydown', (event) =>
+{
+    if (event.key === 'Enter' && textInput.style.display !== 'none') {
+        // hide the textarea
+        textInput.style.display = 'none';
+
+        // remove the old text
+        const textGeometry = scene.children.find(child => child.type === "Mesh" && child.name === 'text');
+        scene.remove(textGeometry);
+
+        // add the new text
+        fontLoader.load(
+            '/fonts/helvetiker_regular.typeface.json',
+            (font) =>
+            {
+                // Material
+                const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+
+                // Text
+                const textGeometry = new TextGeometry(
+                    event.target.value,
+                    {
+                        font: font,
+                        size: 0.5,
+                        depth: 0.2,
+                        curveSegments: 12,
+                        bevelEnabled: true,
+                        bevelThickness: 0.03,
+                        bevelSize: 0.02,
+                        bevelOffset: 0,
+                        bevelSegments: 5
+                    }
+                );
+                textGeometry.center();
+
+                const text = new THREE.Mesh(textGeometry, material);
+                text.name = 'text';
+                scene.add(text);
+            }
+        );
+    }
+});
 
 /**
  * Sizes

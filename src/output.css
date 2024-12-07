@@ -558,10 +558,6 @@ video {
   position: relative;
 }
 
-.top-4 {
-  top: 1rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -571,48 +567,16 @@ video {
   margin-right: auto;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-\[25\%\] {
-  margin-top: 25%;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.mr-auto {
-  margin-right: auto;
-}
-
 .mt-\[15\%\] {
   margin-top: 15%;
 }
 
-.flex {
-  display: flex;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
+.block {
+  display: block;
 }
 
 .max-h-96 {
   max-height: 24rem;
-}
-
-.w-\[60\%\] {
-  width: 60%;
 }
 
 .w-\[80\%\] {
@@ -621,47 +585,6 @@ video {
 
 .resize {
   resize: both;
-}
-
-.list-none {
-  list-style-type: none;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
-.self-center {
-  align-self: center;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 *
@@ -684,8 +607,63 @@ body
   outline: none;
 }
 
+/* Dropdown Button */
+
+.dropbtn {
+  background-color: #e25c02;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #161616;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+  background-color: #030303;
+}
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+  background-color: #e22c02;
+}
+
 @media (min-width: 768px) {
   .md\:w-\[60\%\] {
     width: 60%;
   }
-}
+} 

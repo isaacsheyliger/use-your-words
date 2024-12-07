@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body>
-    <div class="relative flex justify-evenly h-[100vh] z-10 text-white">
-        <div id="themes" class="flex justify-start mt-4 ml-8">
-            <ul id="theme-list" class="flex flex-col list-none">
-                <li class="theme" data-theme="default">Default</li>
-                <li class="theme" data-theme="dark">Dark</li>
-                <li class="theme" data-theme="light">Light</li>
-                <li class="theme" data-theme="blue">Blue</li>
-            </ul>
+    <div class="dropdown z-10">
+        <button class="dropbtn">Themes</button>
+        <div class="dropdown-content">
+            <a href="#">Theme 1</a>
+            <a href="#">Theme 2</a>
+            <a href="#">Theme 3</a>
         </div>
-        <textarea id="message" class="relative mt-[15%] mx-auto w-[80%] md:w-[60%] max-h-96" placeholder="Enter your message..."></textarea>
-    </div>
+    </div> 
+    <textarea id="message" class="relative mt-[15%] mx-auto w-[80%] md:w-[60%] max-h-96 z-10" placeholder="Enter your message..."></textarea>
     <canvas class="webgl"></canvas>
     <script type="module" src="./script.js"></script>
 </body>
