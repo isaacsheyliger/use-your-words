@@ -84,10 +84,35 @@ textInput.style.display = 'none';
 window.addEventListener('keydown', (event) => {
     if (event.key === 't' && textInput.style.display === 'none') {
         // show the textarea
+        event.preventDefault();
         textInput.style.display = 'block';
-        console.log(textInput.style.display);   
+        textInput.value = '';
+        textInput.focus();
     }
 });
+
+window.addEventListener('dblclick' , (event) => {
+    console.log('dblclick');
+    if (textInput.style.display === 'none') {
+        textInput.style.display = 'block';
+        textInput.value = '';
+        textInput.focus();
+    }
+});
+
+let lastClick = 0;
+window.addEventListener('touchstart', function(event) {
+  event.preventDefault(); // to disable browser default zoom on double tap
+  let date = new Date();
+  let time = date.getTime();
+  const time_between_taps = 200; // 200ms
+  if (time - lastClick < time_between_taps && textInput.style.display === 'none') {
+    textInput.style.display = 'block';
+    textInput.value = '';
+    textInput.focus();
+  }
+  lastClick = time;
+})
 
 textInput.addEventListener('keydown', (event) =>
 {
