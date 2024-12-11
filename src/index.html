@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body>
-    <div class="dropdown z-10">
-        <button class="dropbtn">Themes</button>
+    <div class="dropdown z-10 min-h-80">
         <div class="dropdown-content">
-            <a href="#">Theme 1</a>
-            <a href="#">Theme 2</a>
-            <a href="#">Theme 3</a>
+            <button class="dropbtn">Themes</button>
+            <ul class="dropdown-items">
+                <a id="flame" class="theme">Flame Demon</a>
+                <a id="copper" class="theme">Copper Plated</a>
+                <a id="neon" class="theme">Neon Icon</a>
+                <a id="purple-pearl" class="theme">Purple Pearl</a>
+                <a id="xray" class="theme">X-Ray Vision</a>
+            </ul>
         </div>
     </div> 
-    <textarea id="message" class="relative mt-[15%] mx-auto w-[80%] md:w-[60%] max-h-96 z-10" placeholder="Enter your message..."></textarea>
-    <input type="submit" value="Send" class="relative text-white bg-orange-600 hover:bg-red-600 cursor-pointer z-10">
+    <textarea id="message" class="relative z-10 mt-[-5%] mx-auto p-1 w-[80%] md:w-[60%] max-h-96 text-white bg-black/60 bg-" placeholder="Enter your message..." rows="1"></textarea>
+    <input id="submit" type="submit" value="Submit" class="relative z-10 hidden left-[50%] translate-x-[-50%] mt-6 p-2 text-white bg-orange-600 hover:bg-[#e22c02] cursor-pointer">
+    <div class="tooltip">
+        <p>Press 'T' or double click to edit</p>
+        <p>Drag to rotate, scroll to zoom, right click and drag to move</p>
+    </div>
+    <div class="mobile-tooltip text-xs">
+        <p>Double tap to edit</p>
+        <p>Drag to rotate, pinch to zoom, two finger drag to move</p>
+    </div>
     <canvas class="webgl"></canvas>
     <script type="module" src="./script.js"></script>
 </body>
